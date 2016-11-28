@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 class Dopefish extends Component {
   render() {
     return (
-      <p>This is a test string.</p>
+      <img src="./img/swimfish.gif" alt="A swimming dopefish"/>
     );
   }
 }
