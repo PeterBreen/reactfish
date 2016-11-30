@@ -7,6 +7,8 @@ class App extends Component {
     return (
       <div className="ft-basis">
         <Dopefish />
+        <Dopefish />
+        <Dopefish />
       </div>
     );
   }
