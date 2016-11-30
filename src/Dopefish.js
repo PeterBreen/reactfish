@@ -18,7 +18,7 @@ class Dopefish extends Component {
 
   render() {
     return (
-      <img src={imgLeft} alt="A swimming fish" />
+      <img src={imgLeft} alt="A swimming fish" style={{top: this.state.posY, left: this.state.posX}}/>
     );
   }
 }
