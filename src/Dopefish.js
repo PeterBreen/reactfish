@@ -6,14 +6,20 @@ import React, { Component } from 'react';
 import imgLeft from './img/swimfish.gif';
 import imgRight from './img/swimfish2.gif';
 import imgBurp from './img/burpfish.gif';
-import Coordinates from './coords.js';
 
 class Dopefish extends Component {
+
+    getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     constructor(props) {
        super(props);
        this.state = {
-         posX: 50 + '%',
-         posY: 25 + '%'
+         posX: this.getRandomIntInclusive(10,90) + '%',
+         posY: this.getRandomIntInclusive(10,90) + '%'
        };
      }
 
