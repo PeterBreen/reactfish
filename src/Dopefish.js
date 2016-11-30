@@ -18,10 +18,10 @@ class Dopefish extends Component {
   constructor(props) {
      super(props);
      this.state = {
-       posX: this.getRandomIntInclusive(10,90),
-       posY: this.getRandomIntInclusive(10,90),
-       targetX: this.getRandomIntInclusive(10,90),
-       targetY: this.getRandomIntInclusive(10,90),
+       posX: this.getRandomIntInclusive(0,100),
+       posY: this.getRandomIntInclusive(0,100),
+       targetX: this.getRandomIntInclusive(0,100),
+       targetY: this.getRandomIntInclusive(0,100),
        increment: 1,
        imgUrl: imgBurp,
      };
