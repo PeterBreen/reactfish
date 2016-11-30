@@ -1,8 +1,7 @@
 .ft-basis {
-  background: '#ADD8E6';
-  height: '100vh';
-  width: '100vw';
-  padding: '2rem';
+  height: 100%;
+  width: 100%;
+  margin: 70px;
 }
 .ft-basis img {
   position: absolute;
