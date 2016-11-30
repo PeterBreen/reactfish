@@ -3,14 +3,23 @@ this is the parent component for any instances of a Dopefish, such that App.js c
 */
 
 import React, { Component } from 'react';
+import Coords from './coords';
 import imgLeft from './img/swimfish.gif';
 import imgRight from './img/swimfish2.gif';
 import imgBurp from './img/burpfish.gif';
 
 class Dopefish extends Component {
+    constructor(props) {
+       super(props);
+       this.state = {
+         posX: 50 + '%',
+         posY: 25 + '%'
+       };
+     }
+
   render() {
     return (
-      <img src={imgLeft} alt="A swimming dopefish"/>
+      <img src={imgLeft} alt="A swimming fish" />
     );
   }
 }
