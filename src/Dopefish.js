@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import imgLeft from './img/swimfish.gif';
 import imgRight from './img/swimfish2.gif';
 import imgBurp from './img/burpfish.gif';
+import Coordinates from './coords.js';
 
 class Dopefish extends Component {
     constructor(props) {
