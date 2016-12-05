@@ -22,7 +22,7 @@ class Dopefish extends Component {
        posY: this.getRandomIntInclusive(0,100),
        targetX: this.getRandomIntInclusive(0,100),
        targetY: this.getRandomIntInclusive(0,100),
-       increment: 1,
+       increment: 0.25, //while using percent in coordinate calculator, increment must be able to add to 1 - so e.g. 0.25 or 0.5 work, 0.4 does not.
        imgUrl: imgBurp,
      };
    }
@@ -51,7 +51,7 @@ class Dopefish extends Component {
     })
 )} else {
   this.setState((prevState) => ({
-    targetX: this.getRandomIntInclusive(0,90)
+    targetX: this.getRandomIntInclusive(0,100)
   })
 )}
 
@@ -65,7 +65,7 @@ if (this.state.posY < this.state.targetY) {
   })
 )} else {
   this.setState((prevState) => ({
-    targetY: this.getRandomIntInclusive(0,90)
+    targetY: this.getRandomIntInclusive(0,100)
   })
 )}
 
