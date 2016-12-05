@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Dopefish from './Dopefish.js';
 
 class App extends Component {
