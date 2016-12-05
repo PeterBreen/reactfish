@@ -9,9 +9,8 @@ coverage
 # production
 build
 
-#sass
+#cache
 .sass-cache
-scss/
 
 # misc
 .DS_Store
