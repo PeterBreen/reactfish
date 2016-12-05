@@ -51,7 +51,7 @@ class Dopefish extends Component {
     })
 )} else {
   this.setState((prevState) => ({
-    targetX: this.getRandomIntInclusive(0,100)
+    targetX: this.getRandomIntInclusive(0,90)
   })
 )}
 
@@ -65,7 +65,7 @@ if (this.state.posY < this.state.targetY) {
   })
 )} else {
   this.setState((prevState) => ({
-    targetY: this.getRandomIntInclusive(0,100)
+    targetY: this.getRandomIntInclusive(0,90)
   })
 )}
 
