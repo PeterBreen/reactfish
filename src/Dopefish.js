@@ -18,11 +18,11 @@ class Dopefish extends Component {
   constructor(props) {
      super(props);
      this.state = {
-       posX: this.getRandomIntInclusive(0,100),
-       posY: this.getRandomIntInclusive(0,100),
-       targetX: this.getRandomIntInclusive(0,100),
-       targetY: this.getRandomIntInclusive(0,100),
-       increment: 0.25, //while using percent in coordinate calculator, increment must be able to add to 1 - so e.g. 0.25 or 0.5 work, 0.4 does not.
+       posX: this.getRandomIntInclusive(0,90),
+       posY: this.getRandomIntInclusive(0,90),
+       targetX: this.getRandomIntInclusive(0,90),
+       targetY: this.getRandomIntInclusive(0,90),
+       increment: 0.25, //while using percent in coordinates, increment must be able to add to 1 - so e.g. 0.25 or 0.5 work, 0.4 does not.
        imgUrl: imgBurp,
      };
    }
