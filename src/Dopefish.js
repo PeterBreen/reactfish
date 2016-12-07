@@ -13,7 +13,7 @@ class Dopefish extends Component {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  } //note that in order for this to work you have to return a whole integer, hence randomInt 
 
   constructor(props) {
      super(props);
@@ -29,8 +29,7 @@ class Dopefish extends Component {
 
    componentDidMount() {
     this.timerID = setInterval(
-    () => this.tick(),
-    50
+    () => this.tick(), 50
     );
   }
 
