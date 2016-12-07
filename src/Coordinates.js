@@ -1,5 +1,4 @@
-//child function - returns random number between 0-100 for coordinates on page (x/y as expressed in top/left CSS style
-//math function from MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+//child function of Dopefish; handles x/y coord targeting and motion
 import React, { Component } from 'react';
 
 class Coordinates extends Component {
