@@ -1,11 +1,12 @@
 /*
-this is the parent component for any instances of a Dopefish, such that App.js could just call it repeatedly for multiple fish at once. Specifically, it contains state for a fish: what coordinates (which determines location on page) and what direction it is 'swimming' (which determines image to display) as well as a click handler for the onClick burp interact.
+this is the parent component for any instance of a Dopefish, such that App.js could just call it repeatedly for multiple fish at once. Specifically, it contains state for a fish: what coordinates (which determines location on page) and what direction it is 'swimming' (which determines image to display) as well as a click handler for the onClick burp interact.
 */
 
 import React, { Component } from 'react';
 import imgLeft from './img/swimfish.gif';
 import imgRight from './img/swimfish2.gif';
 import imgBurp from './img/burpfish.gif';
+import Coordinates from './Coordinates.js';
 
 class Dopefish extends Component {
 
@@ -13,7 +14,7 @@ class Dopefish extends Component {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  } //note that in order for this to work you have to return a whole integer, hence randomInt 
+  } //note that in order for this to work you have to return a whole integer, hence randomInt
 
   constructor(props) {
      super(props);
@@ -22,7 +23,7 @@ class Dopefish extends Component {
        posY: this.getRandomIntInclusive(0,90),
        targetX: this.getRandomIntInclusive(0,90),
        targetY: this.getRandomIntInclusive(0,90),
-       increment: 0.25, //while using percent in coordinates, increment must be able to add to 1 - so e.g. 0.25 or 0.5 work, 0.4 does not.
+       increment: 0.25, //while using percent in render(), increment must be able to add to exactly 1 - 0.25 or 0.5 work, 0.4 does not.
        imgUrl: imgBurp,
      };
    }
@@ -38,7 +39,7 @@ class Dopefish extends Component {
   }
 
   tick() {
-  if (this.state.posX < this.state.targetX) {
+    if (this.state.posX < this.state.targetX) {
     this.setState((prevState) => ({
       posX: prevState.posX + prevState.increment,
       imgUrl: imgRight
