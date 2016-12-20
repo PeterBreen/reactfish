@@ -18,7 +18,7 @@ class Dopefish extends Component {
 
   onClick(e) {
     e.preventDefault();
-    console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY);
+    console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY + ' timerID: ' + this.timerID);
     clearInterval(this.timerID);
     this.setState({imgUrl: imgBurp});
     setTimeout(this.setMoveInterval, 6000); //does not work
