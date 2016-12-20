@@ -76,6 +76,7 @@ if (this.state.posY < this.state.targetY) {
     e.preventDefault();
     console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY);
     console.log(this.timerID);
+    // clear tick(), change img to imgBurp, wait X ms for anim to finish, start new tick();
   }
   render() {
     return (
