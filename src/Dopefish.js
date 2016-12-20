@@ -14,7 +14,7 @@ class Dopefish extends Component {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  } //note that in order for this to work you have to return a whole integer, hence randomInt
+  } //must return whole integer to work properly with increment logic
 
   constructor(props) {
      super(props);
@@ -23,7 +23,7 @@ class Dopefish extends Component {
        posY: this.getRandomIntInclusive(0,90),
        targetX: this.getRandomIntInclusive(0,90),
        targetY: this.getRandomIntInclusive(0,90),
-       increment: 0.25, //while using percent in render(), increment must be able to add to exactly 1 - 0.25 or 0.5 work, 0.4 does not.
+       increment: 0.25, //while using percent in positioning the element, increment must be able to add to exactly 1 - 0.25 or 0.5 work, 0.4 does not.
        imgUrl: imgBurp,
      };
    }
