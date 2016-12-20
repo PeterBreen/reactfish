@@ -74,7 +74,7 @@ if (this.state.posY < this.state.targetY) {
 
   onClick(e) {
     e.preventDefault();
-    console.log('onClick event triggered, posx: ' + this.state.posX + ' posy: ' + this.state.posY);
+    console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY);
   }
   render() {
     return (
