@@ -18,6 +18,7 @@ class Dopefish extends Component {
 
   constructor(props) {
      super(props);
+     this.onClick = this.onClick.bind(this);
      this.state = {
        posX: this.getRandomIntInclusive(0,90),
        posY: this.getRandomIntInclusive(0,90),
@@ -70,9 +71,14 @@ if (this.state.posY < this.state.targetY) {
 )}
 
 }
+
+  onClick(e) {
+    e.preventDefault();
+    console.log('onClick event triggered');
+  }
   render() {
     return (
-      <img src={this.state.imgUrl} alt="A swimming fish" style={{top: this.state.posY + '%', left: this.state.posX + '%'}}/>
+      <img src={this.state.imgUrl} alt="A swimming fish" onClick={this.onClick} style={{top: this.state.posY + '%', left: this.state.posX + '%'}}/>
     );
   }
 }
