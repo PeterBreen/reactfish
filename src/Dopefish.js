@@ -21,10 +21,15 @@ class Dopefish extends Component {
     console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY);
     clearInterval(this.timerID);
     this.setState({imgUrl: imgBurp});
-
-    // clear timerID interval, change img to imgBurp, wait 6000 ms for anim to finish, start new timerID interval
+    setTimeout(this.setMoveInterval, 6000); //does not work
+    // clear timerID interval, change img to imgBurp, wait X ms for anim to finish, start new timerID interval
   }
 
+  setMoveInterval() {
+    this.timerID = setInterval(
+    () => this.tick(), 50
+    );
+  }
 
   constructor(props) {
      super(props);
@@ -40,9 +45,7 @@ class Dopefish extends Component {
    }
 
    componentDidMount() {
-    this.timerID = setInterval(
-    () => this.tick(), 50
-    );
+     this.setMoveInterval();
   }
 
   componentWillUnmount() {
