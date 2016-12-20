@@ -1,13 +1,14 @@
 //child function of Dopefish; handles x/y coord targeting and motion
-import React, { Component } from 'react';
+import { Component } from 'react';
 
-class Coordinates extends Component {
+export class Coordinates extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
-    return this.getRandomIntInclusive(0, 100);
+    return (
+      console.log(this.props)
+    )
   }
 }
-
-export default Coordinates;
