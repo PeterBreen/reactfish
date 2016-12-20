@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import imgLeft from './img/swimfish.gif';
 import imgRight from './img/swimfish2.gif';
 import imgBurp from './img/burpfish.gif';
-import Coordinates from './Coordinates.js';
+// import Coordinates from './Coordinates.js';
 
 class Dopefish extends Component {
 
@@ -22,7 +22,7 @@ class Dopefish extends Component {
     clearInterval(this.timerID);
     this.setState({imgUrl: imgBurp});
 
-    // clear tick(), change img to imgBurp, wait X ms for anim to finish, start new tick();
+    // clear timerID interval, change img to imgBurp, wait 6000 ms for anim to finish, start new timerID interval
   }
 
 
