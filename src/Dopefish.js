@@ -19,10 +19,8 @@ class Dopefish extends Component {
   onClick(e) {
     e.preventDefault();
     console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY + ' timerID: ' + this.timerID);
-    clearInterval(this.timerID);
     this.setState({imgUrl: imgBurp});
-    setTimeout(this.setMoveInterval, 6000); //does not work
-    // clear timerID interval, change img to imgBurp, wait X ms for anim to finish, start new timerID interval
+     //find a way to pause/stop/something interval for 6000ms
   }
 
   setMoveInterval() {
