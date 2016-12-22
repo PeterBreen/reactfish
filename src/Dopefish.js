@@ -16,7 +16,7 @@ class Dopefish extends Component {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   } //must return whole integer to work properly with increment logic
 
-  onClick(e) {
+  handleClick(e) {
     e.preventDefault();
     console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY + ' timerID: ' + this.timerID);
     this.setState({imgUrl: imgBurp});
@@ -31,7 +31,7 @@ class Dopefish extends Component {
 
   constructor(props) {
      super(props);
-     this.onClick = this.onClick.bind(this);
+     this.handleClick = this.handleClick.bind(this);
      this.state = {
        posX: this.getRandomIntInclusive(0,90),
        posY: this.getRandomIntInclusive(0,90),
@@ -86,7 +86,7 @@ if (this.state.posY < this.state.targetY) {
 
   render() {
     return (
-      <img src={this.state.imgUrl} alt="A swimming fish" onClick={this.onClick} style={{top: this.state.posY + '%', left: this.state.posX + '%'}}/>
+      <img src={this.state.imgUrl} alt="A swimming fish" onClick={this.handleClick} style={{top: this.state.posY + '%', left: this.state.posX + '%'}}/>
     );
   }
 }
