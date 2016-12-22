@@ -2,7 +2,10 @@
 
 It's a fishtank, built in React! You can watch and ... sort of interact with a dopefish. Reactfish was originally built from the Codecademy React scaffolding, but was rebuilt in the Create React App and ES2015 syntax.
 
+##Instructions
+Follow the Create React App deployment instructions: https://github.com/facebookincubator/create-react-app  
 
+Assuming you run `npm start` and then navigate to `localhost:3000`, watch fish swim around - much like a real fishtank. You can click on a specific fish and it will pause, burp, and then continue swimming around the tank.
 
 
 ##What the heck is a dopefish?
