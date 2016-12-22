@@ -1,5 +1,5 @@
 /*
-this is the parent component for any instance of a Dopefish, such that App.js could just call it repeatedly for multiple fish at once. Specifically, it contains state for a fish: what coordinates (which determines location on page) and what direction it is 'swimming' (which determines image to display) as well as a click handler for the onClick burp interact.
+this is the parent component for any instance of a Dopefish, such that App.js could just call it repeatedly for multiple fish at once. Specifically, it contains state for a fish: what coordinates (which determines location on page) and what direction it is 'swimming' (which determines image to display) as well as a click handler for the  burp interact.
 */
 
 import React, { Component } from 'react';
@@ -18,13 +18,11 @@ class Dopefish extends Component {
 
   handleClick(e) {
     e.preventDefault();
-    console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY + ' timerID: ' + this.timerID);
     clearInterval(this.timerID);
     this.setState({ imgUrl: imgBurp });
     setTimeout(() => {
       this.setMoveInterval(50);
     }, 6000);
-    // this.setState({imgUrl: imgBurp});
   }
 
   setMoveInterval(interval) {
