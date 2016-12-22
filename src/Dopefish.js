@@ -19,13 +19,15 @@ class Dopefish extends Component {
   handleClick(e) {
     e.preventDefault();
     console.log('onClick event triggered, posX: ' + this.state.posX + ' posY: ' + this.state.posY + ' timerID: ' + this.timerID);
+    clearInterval(this.timerID);
     this.setState({imgUrl: imgBurp});
-     //find a way to pause/stop/something interval for 6000ms
+     //find a way to pause/stop movement for 6000ms (accept a variable that equals duration of animation)
+     //then resume/restart moving every 50ms (accept a variable here also)
   }
 
-  setMoveInterval() {
+  setMoveInterval(interval) {
     this.timerID = setInterval(
-    () => this.tick(), 50
+    () => this.tick(), interval
     );
   }
 
@@ -43,7 +45,7 @@ class Dopefish extends Component {
    }
 
    componentDidMount() {
-     this.setMoveInterval();
+     this.setMoveInterval(50);
   }
 
   componentWillUnmount() {
