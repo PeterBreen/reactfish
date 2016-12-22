@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 import imgLeft from './img/swimfish.gif';
 import imgRight from './img/swimfish2.gif';
 import imgBurp from './img/burpfish.gif';
-// import Coordinates from './Coordinates.js';
 
 class Dopefish extends Component {
 
@@ -58,33 +57,31 @@ class Dopefish extends Component {
       posX: prevState.posX + prevState.increment,
       imgUrl: imgRight
     })
-  )} else if (this.state.posX > this.state.targetX) {
-    this.setState((prevState) => ({
-      posX: prevState.posX - prevState.increment,
-      imgUrl: imgLeft
-    })
-)} else {
-  this.setState((prevState) => ({
-    targetX: this.getRandomIntInclusive(0,90)
-  })
-)}
+    )} else if (this.state.posX > this.state.targetX) {
+      this.setState((prevState) => ({
+        posX: prevState.posX - prevState.increment,
+        imgUrl: imgLeft
+      })
+    )} else {
+      this.setState((prevState) => ({
+        targetX: this.getRandomIntInclusive(0,90)
+      })
+    )}
 
-if (this.state.posY < this.state.targetY) {
-  this.setState((prevState) => ({
-    posY: prevState.posY + prevState.increment,
-  })
-)} else if (this.state.posY > this.state.targetY) {
-  this.setState((prevState) => ({
-    posY: prevState.posY - prevState.increment,
-  })
-)} else {
-  this.setState((prevState) => ({
-    targetY: this.getRandomIntInclusive(0,90)
-  })
-)}
-
-}
-
+    if (this.state.posY < this.state.targetY) {
+      this.setState((prevState) => ({
+        posY: prevState.posY + prevState.increment,
+      })
+    )} else if (this.state.posY > this.state.targetY) {
+      this.setState((prevState) => ({
+        posY: prevState.posY - prevState.increment,
+      })
+    )} else {
+      this.setState((prevState) => ({
+        targetY: this.getRandomIntInclusive(0,90)
+      })
+    )}
+  }
 
   render() {
     return (
