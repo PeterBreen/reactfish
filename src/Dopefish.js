@@ -1,11 +1,12 @@
 /*
-this is the parent component for any instances of a Dopefish, such that App.js could just call it repeatedly for multiple fish at once. Specifically, it contains state for a fish: what coordinates (which determines location on page) and what direction it is 'swimming' (which determines image to display) as well as a click handler for the onClick burp interact.
+this is the parent component for any instance of a Dopefish, such that App.js could just call it repeatedly for multiple fish at once. Specifically, it contains state for a fish: what coordinates (which determines location on page) and what direction it is 'swimming' (which determines image to display) as well as a click handler for the  burp interact.
 */
 
 import React, { Component } from 'react';
 import imgLeft from './img/swimfish.gif';
 import imgRight from './img/swimfish2.gif';
 import imgBurp from './img/burpfish.gif';
+// import Coordinates from './Coordinates.js';
 
 class Dopefish extends Component {
 
@@ -13,25 +14,38 @@ class Dopefish extends Component {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  } //must return whole integer to work properly with increment logic
+
+  handleClick(e) {
+    e.preventDefault();
+    clearInterval(this.timerID);
+    this.setState({ imgUrl: imgBurp });
+    setTimeout(() => {
+      this.setMoveInterval(50);
+    }, 6000);
+  }
+
+  setMoveInterval(interval) {
+    this.timerID = setInterval(
+    () => this.tick(), interval
+    );
   }
 
   constructor(props) {
      super(props);
+     this.handleClick = this.handleClick.bind(this);
      this.state = {
-       posX: this.getRandomIntInclusive(0,100),
-       posY: this.getRandomIntInclusive(0,100),
-       targetX: this.getRandomIntInclusive(0,100),
-       targetY: this.getRandomIntInclusive(0,100),
-       increment: 1,
+       posX: this.getRandomIntInclusive(0,90),
+       posY: this.getRandomIntInclusive(0,90),
+       targetX: this.getRandomIntInclusive(0,90),
+       targetY: this.getRandomIntInclusive(0,90),
+       increment: 0.25, //while using percent in positioning the element, increment must be able to add to exactly 1 - 0.25 or 0.5 work, 0.4 does not.
        imgUrl: imgBurp,
      };
    }
 
    componentDidMount() {
-    this.timerID = setInterval(
-    () => this.tick(),
-    50
-    );
+     this.setMoveInterval(50);
   }
 
   componentWillUnmount() {
@@ -39,7 +53,7 @@ class Dopefish extends Component {
   }
 
   tick() {
-  if (this.state.posX < this.state.targetX) {
+    if (this.state.posX < this.state.targetX) {
     this.setState((prevState) => ({
       posX: prevState.posX + prevState.increment,
       imgUrl: imgRight
@@ -70,9 +84,11 @@ if (this.state.posY < this.state.targetY) {
 )}
 
 }
+
+
   render() {
     return (
-      <img src={this.state.imgUrl} alt="A swimming fish" style={{top: this.state.posY + '%', left: this.state.posX + '%'}}/>
+      <img src={this.state.imgUrl} alt="A swimming fish" onClick={this.handleClick} style={{top: this.state.posY + '%', left: this.state.posX + '%'}}/>
     );
   }
 }
