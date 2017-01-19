@@ -7,7 +7,6 @@ import imgBurp from './img/burpfish.gif';
 export class Coordinates extends Component {
   constructor(props) {
     super(props);
-    this.tick = this.tick.bind(this);
     this.state = {
       posX: this.getRandomIntInclusive(0,90),
       posY: this.getRandomIntInclusive(0,90),

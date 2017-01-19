@@ -3,7 +3,7 @@ this is the parent component for any instance of a Dopefish, such that App.js co
 */
 
 import React, { Component } from 'react';
-import Coordinates from './Coordinates.js';
+import Coordinates, { tick } from './Coordinates.js';
 import imgBurp from './img/burpfish.gif';
 
 
@@ -29,7 +29,7 @@ class Dopefish extends Component {
 
   setMoveInterval(interval) {
     this.timerID = setInterval(
-    () => Coordinates.tick(), interval
+    () => Coordinates.tick(), interval //function is stuck in this.hell
     );
   }
 
@@ -42,7 +42,7 @@ class Dopefish extends Component {
   }
 
   render() {
-    return <Coordinates onClick={this.handleClick} />
+    return <Coordinates onClick={this.handleClick} tick={this.tick} />
   }
 }
 
