@@ -29,7 +29,7 @@ class Dopefish extends Component {
 
   setMoveInterval(interval) {
     this.timerID = setInterval(
-    () => Coordinates.tick(), interval //function is stuck in this.hell
+    () => Coordinates.tick(), interval //function is stuck in this.hell; needs to call specific instance of child Coordinates.tick method?
     );
   }
 
