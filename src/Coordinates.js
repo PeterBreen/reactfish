@@ -63,4 +63,4 @@ export class Coordinates extends Component {
   }
 }
 
-export class Coordinates;
+export default Coordinates
