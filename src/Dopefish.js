@@ -27,7 +27,7 @@ class Dopefish extends Component {
       this.timerID = setInterval(
       () => this.tick(), interval
       );
-    } // still not sure about this 
+    } // still not sure about this situation, see also render line
 
    componentDidMount() {
      this.setMoveInterval(50);
