@@ -9,7 +9,7 @@ By default, `npm start` will serve the page on `localhost:3000`, where you can w
 
 
 ## What the heck is a dopefish?
-Dopefish is an enemy from Commander Keen IV: Keen Dreams. For more information than you ever wanted to know, please see [Dopefish.com](http://www.dopefish.com/) It's a fish who likes to swim and eat. Sometimes it burps. And that's about it.
+Dopefish is an enemy from Commander Keen IV: Keen Dreams. For more information than you ever wanted to know, please see [Dopefish.com](http://www.dopefish.com/). In short: It's a fish who likes to swim and eat. Sometimes it burps. And that's about it.
 
 
 ## Resources
