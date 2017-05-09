@@ -12,7 +12,7 @@ class Dopefish extends Component {
   constructor(props) {
      super(props);
     //  this.handleClick = this.handleClick.bind(this);
-     this.handleClick = _.debounce(this.handleClick.bind(this),6000); //binds, then debounces for duration of animation
+     this.handleClick = _.debounce(this.handleClick.bind(this),6000, { 'leading': true }); //binds, then debounces for duration of animation
      this.state = {
        posX: this.getRandomIntInclusive(0,90),
        posY: this.getRandomIntInclusive(0,90),
