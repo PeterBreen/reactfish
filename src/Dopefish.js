@@ -29,8 +29,7 @@ class Dopefish extends Component {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   } //must return whole integer to work properly
 
-  handleClick(e) {
-    e.preventDefault();
+  handleClick() {
     clearInterval(this.timerID);
     this.setState({ imgUrl: imgBurp });
     setTimeout(() => {
