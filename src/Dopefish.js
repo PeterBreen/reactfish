@@ -6,14 +6,28 @@ import React, { Component } from 'react';
 import imgLeft from './img/swimfish.gif';
 import imgRight from './img/swimfish2.gif';
 import imgBurp from './img/burpfish.gif';
+import _ from 'lodash';
 
 class Dopefish extends Component {
+  constructor(props) {
+     super(props);
+    //  this.handleClick = this.handleClick.bind(this);
+     this.handleClick = _.debounce(this.handleClick.bind(this),6000); //binds, then debounces for duration of animation
+     this.state = {
+       posX: this.getRandomIntInclusive(0,90),
+       posY: this.getRandomIntInclusive(0,90),
+       targetX: this.getRandomIntInclusive(0,90),
+       targetY: this.getRandomIntInclusive(0,90),
+       increment: 0.25, //while using percent in positioning the element, increment must be able to add to exactly 1 - 0.25 or 0.5 work, 0.4 does not.
+       imgUrl: imgBurp,
+     };
+   }
 
   getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  } //must return whole integer to work properly with increment logic
+  } //must return whole integer to work properly
 
   handleClick(e) {
     e.preventDefault();
@@ -29,19 +43,6 @@ class Dopefish extends Component {
     () => this.tick(), interval
     );
   }
-
-  constructor(props) {
-     super(props);
-     this.handleClick = this.handleClick.bind(this);
-     this.state = {
-       posX: this.getRandomIntInclusive(0,90),
-       posY: this.getRandomIntInclusive(0,90),
-       targetX: this.getRandomIntInclusive(0,90),
-       targetY: this.getRandomIntInclusive(0,90),
-       increment: 0.25, //while using percent in positioning the element, increment must be able to add to exactly 1 - 0.25 or 0.5 work, 0.4 does not.
-       imgUrl: imgBurp,
-     };
-   }
 
    componentDidMount() {
      this.setMoveInterval(50);
