@@ -12,12 +12,12 @@ class Dopefish extends Component {
   constructor(props) {
      super(props);
     //  this.handleClick = this.handleClick.bind(this);
-     this.handleClick = _.debounce(this.handleClick.bind(this),6000, { 'leading': true }); //binds, then debounces for duration of animation.
+     this.handleFishClick = _.debounce(this.handleFishClick.bind(this),6000, { 'leading': true }); //binds, then debounces for duration of animation.
      this.state = {
-       posX: this.getRandomIntInclusive(0,this.props.windowWidth),
-       posY: this.getRandomIntInclusive(0,this.props.windowHeight),
-       targetX: this.getRandomIntInclusive(0,this.props.windowWidth),
-       targetY: this.getRandomIntInclusive(0,this.props.windowHeight),
+       posX: this.getRandomIntInclusive(0, this.props.windowWidth),
+       posY: this.getRandomIntInclusive(0, this.props.windowHeight),
+       targetX: this.getRandomIntInclusive(0, this.props.windowWidth),
+       targetY: this.getRandomIntInclusive(0, this.props.windowHeight),
        imgUrl: imgBurp,
      };
    }
@@ -26,9 +26,9 @@ class Dopefish extends Component {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  } //must return whole integer to work properly
+  } //math function from MDN - must return whole integer to work properly in this app
 
-  handleClick() {
+  handleFishClick() {
     clearInterval(this.timerID);
     this.setState({
       imgUrl: imgBurp
@@ -86,7 +86,7 @@ class Dopefish extends Component {
 
   render() {
     return (
-      <img src={this.state.imgUrl} alt="A swimming fish" onClick={this.handleClick} style={{top: this.state.posY + 'px', left: this.state.posX + 'px'}}/>
+      <img src={this.state.imgUrl} alt="A swimming fish" onClick={this.handleFishClick} style={{top: this.state.posY + 'px', left: this.state.posX + 'px'}}/>
     );
   }
 }
