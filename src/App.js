@@ -21,6 +21,7 @@ class App extends Component {
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
+
   render() {
     return (
       <div className="ft-basis">
