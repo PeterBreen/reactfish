@@ -14,8 +14,8 @@ class Dopefish extends Component {
     //  this.handleClick = this.handleClick.bind(this);
      this.handleFishClick = _.debounce(this.handleFishClick.bind(this),6000, { 'leading': true }); //binds, then debounces for duration of animation.
      this.state = {
-       posX: this.getRandomIntInclusive(0, this.props.windowWidth),
-       posY: this.getRandomIntInclusive(0, this.props.windowHeight),
+       posX: this.getRandomIntInclusive(0, window.innerWidth),
+       posY: this.getRandomIntInclusive(0, window.innerHeight),
        targetX: this.getRandomIntInclusive(0, this.props.windowWidth),
        targetY: this.getRandomIntInclusive(0, this.props.windowHeight),
        imgUrl: imgBurp,
