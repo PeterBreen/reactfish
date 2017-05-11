@@ -25,9 +25,9 @@ class App extends Component {
   render() {
     return (
       <div className="ft-basis">
-        <Dopefish />
-        <Dopefish />
-        <Dopefish />
+        <Dopefish windowWidth={this.state.width} windowHeight={this.state.height} />
+        <Dopefish windowWidth={this.state.width} windowHeight={this.state.height} />
+        <Dopefish windowWidth={this.state.width} windowHeight={this.state.height} />
       </div>
     );
   }

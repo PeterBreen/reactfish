@@ -14,11 +14,10 @@ class Dopefish extends Component {
     //  this.handleClick = this.handleClick.bind(this);
      this.handleClick = _.debounce(this.handleClick.bind(this),6000, { 'leading': true }); //binds, then debounces for duration of animation.
      this.state = {
-       posX: this.getRandomIntInclusive(0,90),
-       posY: this.getRandomIntInclusive(0,90),
-       targetX: this.getRandomIntInclusive(0,90),
-       targetY: this.getRandomIntInclusive(0,90),
-       increment: 0.25, //while using percent in positioning the element, increment must be able to add to exactly 1 - 0.25 or 0.5 work, 0.4 does not.
+       posX: this.getRandomIntInclusive(0,this.props.windowWidth),
+       posY: this.getRandomIntInclusive(0,this.props.windowHeight),
+       targetX: this.getRandomIntInclusive(0,this.props.windowWidth),
+       targetY: this.getRandomIntInclusive(0,this.props.windowHeight),
        imgUrl: imgBurp,
      };
    }
@@ -35,7 +34,7 @@ class Dopefish extends Component {
       imgUrl: imgBurp
     });
     setTimeout(() => {
-      this.setMoveInterval(50);
+      this.setMoveInterval(20);
     }, 6000);
   }
 
@@ -46,7 +45,7 @@ class Dopefish extends Component {
   }
 
    componentDidMount() {
-     this.setMoveInterval(50);
+     this.setMoveInterval(20);
   }
 
   componentWillUnmount() {
@@ -56,38 +55,38 @@ class Dopefish extends Component {
   tick() {
     if (this.state.posX < this.state.targetX) {
     this.setState((prevState) => ({
-      posX: prevState.posX + prevState.increment,
+      posX: prevState.posX + 1,
       imgUrl: imgRight
     })
     )} else if (this.state.posX > this.state.targetX) {
       this.setState((prevState) => ({
-        posX: prevState.posX - prevState.increment,
+        posX: prevState.posX - 1,
         imgUrl: imgLeft
       })
     )} else {
       this.setState((prevState) => ({
-        targetX: this.getRandomIntInclusive(0,90)
+        targetX: this.getRandomIntInclusive(0,this.props.windowWidth)
       })
     )}
 
     if (this.state.posY < this.state.targetY) {
       this.setState((prevState) => ({
-        posY: prevState.posY + prevState.increment,
+        posY: prevState.posY + 1,
       })
     )} else if (this.state.posY > this.state.targetY) {
       this.setState((prevState) => ({
-        posY: prevState.posY - prevState.increment,
+        posY: prevState.posY - 1,
       })
     )} else {
       this.setState((prevState) => ({
-        targetY: this.getRandomIntInclusive(0,90)
+        targetY: this.getRandomIntInclusive(0,this.props.windowHeight)
       })
     )}
   }
 
   render() {
     return (
-      <img src={this.state.imgUrl} alt="A swimming fish" onClick={this.handleClick} style={{top: this.state.posY + '%', left: this.state.posX + '%'}}/>
+      <img src={this.state.imgUrl} alt="A swimming fish" onClick={this.handleClick} style={{top: this.state.posY + 'px', left: this.state.posX + 'px'}}/>
     );
   }
 }
