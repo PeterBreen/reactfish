@@ -5,7 +5,7 @@ It's a fishtank, built in React! You can watch and ... sort of interact with a d
 ## Instructions
 Follow the deployment instructions from [Create React App](https://github.com/facebookincubator/create-react-app).
 
-By default, `npm start` will serve the page on `localhost:3000`, where you can watch fish swim around - much like a real fishtank. You can click on a specific fish and it will pause, burp, and then continue swimming around the tank.
+By default, `npm start` will serve the page on `localhost:3000`, where you can watch fish swim around - much like a real fishtank. You can click on a specific fish and it will pause, burp, and then continue swimming around the tank. Note that you will have to edit the package.json to deploy, as it's currently targeting my [Github pages deployment](https://peterbreen.github.io/reactfish).
 
 
 ## What the heck is a dopefish?
@@ -13,7 +13,10 @@ Dopefish is an enemy from Commander Keen IV: Keen Dreams. For more information t
 
 
 ## Resources
-  - All Dopefish images courtesy dopefish.com, run by Joe Siegler
+  - All Dopefish images courtesy [dopefish.com](http://www.dopefish.com), run by Joe Siegler
   - Dopefish created by Tom Hall
   - [Create React App](https://github.com/facebookincubator/create-react-app)
-  - While no longer in the codebase, initial React scaffolding was provided by [Codecademy React Setup](https://www.codecademy.com/articles/react-setup-i)
+  - [CSS reset](http://meyerweb.com/eric/tools/css/reset/) from Eric Meyer
+  - [Lodash](https://lodash.com/)
+  - [getRandomIntInclusive](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) function from MDN
+  - [Window resize event handler](http://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs) from speckledcarp, via Stack Overflow
