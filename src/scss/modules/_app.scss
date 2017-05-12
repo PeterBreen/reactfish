@@ -13,8 +13,8 @@ body {
   height: 100%;
   width: calc(100% - 0.6rem);
   position: absolute;
-  border-left: 0.3rem solid #000;
-  border-right: 0.3rem solid #000;
+  border-left: 0.3rem solid $tankborder;
+  border-right: 0.3rem solid $tankborder;
 }
 //fishtank styles
 .ft-basis {
