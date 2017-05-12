@@ -46,6 +46,7 @@ table {
   border-spacing: 0; }
 
 body {
+  font-size: 16px;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -61,8 +62,10 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$tankwater', endColorstr='$tankwater-light',GradientType=0 );
   /* IE6-9 */
   height: 100%;
-  width: 100%;
-  position: absolute; }
+  width: calc(100% - 0.6rem);
+  position: absolute;
+  border-left: 0.3rem solid #000;
+  border-right: 0.3rem solid #000; }
 
 .ft-basis {
   margin: 70px; }

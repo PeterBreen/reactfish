@@ -1,9 +1,9 @@
 body {
+  font-size: 16px;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: $tankwater;
-
 }
 #root {
   background: -moz-linear-gradient(top, $tankwater-light 0%, $tankwater-mid 40%, $tankwater 100%); /* FF3.6-15 */
@@ -11,10 +11,12 @@ body {
   background: linear-gradient(to bottom, $tankwater-light 0%,$tankwater-mid 40%,$tankwater 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$tankwater', endColorstr='$tankwater-light',GradientType=0 ); /* IE6-9 */
   height: 100%;
-  width: 100%;
+  width: calc(100% - 0.6rem);
   position: absolute;
+  border-left: 0.3rem solid #000;
+  border-right: 0.3rem solid #000;
 }
-
+//fishtank styles
 .ft-basis {
   margin: 70px;
 }
