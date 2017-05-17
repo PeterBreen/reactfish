@@ -6,28 +6,29 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { width: '0', height: '0' };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.updateFishtankDimensions = this.updateFishtankDimensions.bind(this);
+    //
   }
 
   componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
+    this.updateFishtankDimensions();
+    window.addEventListener('resize', this.updateFishtankDimensions);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
+    window.removeEventListener('resize', this.updateFishtankDimensions);
   }
 
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  updateFishtankDimensions() {
+      this.setState({ width: this.refs.fishtank.clientWidth, height: this.refs.fishtank.clientHeight });
   }
 
   render() {
     return (
-      <div className="ft-basis">
-        <Dopefish windowWidth={this.state.width} windowHeight={this.state.height} />
-        <Dopefish windowWidth={this.state.width} windowHeight={this.state.height} />
-        <Dopefish windowWidth={this.state.width} windowHeight={this.state.height} />
+      <div className="fishtank" ref="fishtank">
+        <Dopefish width={this.state.width} height={this.state.height} />
+        <Dopefish width={this.state.width} height={this.state.height} />
+        <Dopefish width={this.state.width} height={this.state.height} />
       </div>
     );
   }

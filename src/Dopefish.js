@@ -14,13 +14,23 @@ class Dopefish extends Component {
     //  this.handleClick = this.handleClick.bind(this);
      this.handleFishClick = _.debounce(this.handleFishClick.bind(this),6000, { 'leading': true }); //binds, then debounces for duration of animation.
      this.state = {
-       posX: this.getRandomIntInclusive(0, this.props.windowWidth),
-       posY: this.getRandomIntInclusive(0, this.props.windowHeight),
-       targetX: this.getRandomIntInclusive(0, this.props.windowWidth),
-       targetY: this.getRandomIntInclusive(0, this.props.windowHeight),
+       posX: this.tankBoundariesCalc(this.width),
+       posY: this.tankBoundariesCalc(this.height),
+       targetX: this.tankBoundariesCalc(this.width),
+       targetY: this.tankBoundariesCalc(this.height),
        imgUrl: imgBurp,
      };
    }
+
+  tankBoundariesCalc(dimension) {
+    if (dimension === this.width) {
+      return this.getRandomIntInclusive(0, this.props.width)
+    }
+    else if (dimension === this.height) {
+      return this.getRandomIntInclusive(0, this.props.height)
+    }
+    else { console.log('invalid dimension type passed to tankBoundariesCalc')}
+  }
 
   getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -65,7 +75,7 @@ class Dopefish extends Component {
       })
     )} else {
       this.setState((prevState) => ({
-        targetX: this.getRandomIntInclusive(0,this.props.windowWidth-20)
+        targetX: this.getRandomIntInclusive(0,this.props.width)
       })
     )}
 
@@ -79,7 +89,7 @@ class Dopefish extends Component {
       })
     )} else {
       this.setState((prevState) => ({
-        targetY: this.getRandomIntInclusive(0,this.props.windowHeight-20)
+        targetY: this.getRandomIntInclusive(0,this.props.height)
       })
     )}
   }
