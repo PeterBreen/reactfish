@@ -24,11 +24,15 @@ class Dopefish extends Component {
 
   tankBoundariesCalc(dimension) {
     if (dimension === this.width) {
-      return this.getRandomIntInclusive(0, this.props.width)
+      let calcval = this.getRandomIntInclusive(0, this.props.width)
+      console.log('calculated X value of ', calcval)
+      return calcval;
     }
     else if (dimension === this.height) {
-      return this.getRandomIntInclusive(0, this.props.height)
-    }
+        let calcval =  this.getRandomIntInclusive(0, this.props.height)
+        console.log('calculated Y value of ', calcval)
+        return calcval;
+      }
     else { console.log('invalid dimension type passed to tankBoundariesCalc')}
   }
 
@@ -75,7 +79,7 @@ class Dopefish extends Component {
       })
     )} else {
       this.setState((prevState) => ({
-        targetX: this.getRandomIntInclusive(0,this.props.width)
+        targetX: this.tankBoundariesCalc(this.width)
       })
     )}
 
@@ -89,7 +93,7 @@ class Dopefish extends Component {
       })
     )} else {
       this.setState((prevState) => ({
-        targetY: this.getRandomIntInclusive(0,this.props.height)
+        targetY: this.tankBoundariesCalc(this.height)
       })
     )}
   }
