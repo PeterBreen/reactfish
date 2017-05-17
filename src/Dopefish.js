@@ -14,10 +14,10 @@ class Dopefish extends Component {
     //  this.handleClick = this.handleClick.bind(this);
      this.handleFishClick = _.debounce(this.handleFishClick.bind(this),6000, { 'leading': true }); //binds, then debounces for duration of animation.
      this.state = {
-       posX: this.getRandomIntInclusive(0, window.innerWidth-20),
-       posY: this.getRandomIntInclusive(0, window.innerHeight-20),
-       targetX: this.getRandomIntInclusive(0, this.props.windowWidth-20),
-       targetY: this.getRandomIntInclusive(0, this.props.windowHeight-20),
+       posX: this.getRandomIntInclusive(0, this.props.windowWidth),
+       posY: this.getRandomIntInclusive(0, this.props.windowHeight),
+       targetX: this.getRandomIntInclusive(0, this.props.windowWidth),
+       targetY: this.getRandomIntInclusive(0, this.props.windowHeight),
        imgUrl: imgBurp,
      };
    }
