@@ -14,26 +14,18 @@ class Dopefish extends Component {
     //  this.handleClick = this.handleClick.bind(this);
      this.handleFishClick = _.debounce(this.handleFishClick.bind(this),6000, { 'leading': true }); //binds, then debounces for duration of animation.
      this.state = {
-       posX: this.tankBoundariesCalc(this.width),
-       posY: this.tankBoundariesCalc(this.height),
-       targetX: this.tankBoundariesCalc(this.width),
-       targetY: this.tankBoundariesCalc(this.height),
+       posX: this.tankBoundariesCalc(this.props.width),
+       posY: this.tankBoundariesCalc(this.props.height),
+       targetX: this.tankBoundariesCalc(this.props.width),
+       targetY: this.tankBoundariesCalc(this.props.height),
        imgUrl: imgBurp,
      };
    }
 
-  tankBoundariesCalc(dimension) {
-    if (dimension === this.width) {
-      let calcval = this.getRandomIntInclusive(0, this.props.width)
-      console.log('calculated X value of ', calcval)
+  tankBoundariesCalc(val) {
+      let calcval = this.getRandomIntInclusive(0, val)
+      console.log('calculated value of: ', calcval)
       return calcval;
-    }
-    else if (dimension === this.height) {
-        let calcval =  this.getRandomIntInclusive(0, this.props.height)
-        console.log('calculated Y value of ', calcval)
-        return calcval;
-      }
-    else { console.log('invalid dimension type passed to tankBoundariesCalc')}
   }
 
   getRandomIntInclusive(min, max) {
@@ -79,7 +71,7 @@ class Dopefish extends Component {
       })
     )} else {
       this.setState((prevState) => ({
-        targetX: this.tankBoundariesCalc(this.width)
+        targetX: this.tankBoundariesCalc(this.props.width)
       })
     )}
 
@@ -93,7 +85,7 @@ class Dopefish extends Component {
       })
     )} else {
       this.setState((prevState) => ({
-        targetY: this.tankBoundariesCalc(this.height)
+        targetY: this.tankBoundariesCalc(this.props.height)
       })
     )}
   }
