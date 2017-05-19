@@ -1,7 +1,7 @@
 //fishtank styles
 .fishtank {
-  position: relative;
-  height: 100%;
+  height: calc(100% - 3rem);
+  padding: 1rem 1rem 2rem 1rem;
 }
 .fishtank img {
   position: absolute;
