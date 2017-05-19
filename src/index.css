@@ -67,8 +67,8 @@ body {
     border-left: 0.3rem solid #000;
     border-right: 0.3rem solid #000; } }
 .fishtank {
-  height: calc(100% - 3rem);
-  margin: 1rem 1rem 2rem 1rem; }
+  height: calc(100% - 4rem);
+  margin: 0rem 1rem 4rem 1rem; }
 
 .fishtank img {
   position: absolute; }
