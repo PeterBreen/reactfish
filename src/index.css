@@ -45,6 +45,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html, body {
+  height: 100%; }
+
 body {
   font-size: 16px;
   margin: 0;
@@ -63,13 +66,11 @@ body {
   /* IE6-9 */
   height: 100%;
   width: calc(100% - 0.6rem);
-  position: absolute;
   border-left: 0.3rem solid #000;
   border-right: 0.3rem solid #000; }
 
 .fishtank {
-  display: flex;
-  width: 100%;
+  position: relative;
   height: 100%; }
 
 .fishtank img {

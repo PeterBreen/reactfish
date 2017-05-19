@@ -1,3 +1,6 @@
+html, body {
+  height: 100%;
+}
 body {
   font-size: 16px;
   margin: 0;
@@ -12,7 +15,6 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$tankwater', endColorstr='$tankwater-light',GradientType=0 ); /* IE6-9 */
   height: 100%;
   width: calc(100% - 0.6rem);
-  position: absolute;
   border-left: 0.3rem solid $tankborder;
   border-right: 0.3rem solid $tankborder;
 }
