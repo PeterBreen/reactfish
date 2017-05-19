@@ -1,23 +1,20 @@
+html, body, #root {
+  height: 100%;
+}
 body {
+  font-size: 16px;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: $tankwater;
-
-}
-#root {
   background: -moz-linear-gradient(top, $tankwater-light 0%, $tankwater-mid 40%, $tankwater 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, $tankwater-light 0%,$tankwater-mid 40%,$tankwater 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, $tankwater-light 0%,$tankwater-mid 40%,$tankwater 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$tankwater', endColorstr='$tankwater-light',GradientType=0 ); /* IE6-9 */
-  height: 100%;
-  width: 100%;
-  position: absolute;
 }
 
-.ft-basis {
-  margin: 70px;
-}
-.ft-basis img {
-  position: absolute;
+@media screen and (min-width: 40rem ) {
+  body {
+    border-left: 0.3rem solid $tankborder;
+    border-right: 0.3rem solid $tankborder;
+  }
 }
