@@ -1,6 +1,6 @@
 {
   "name": "reactfish",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://peterbreen.github.io/reactfish",
   "private": true,
   "devDependencies": {
@@ -17,6 +17,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "eject": "react-scripts eject"
   }
 }
