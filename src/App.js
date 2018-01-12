@@ -5,7 +5,7 @@ class App extends Component {
   // get viewport width/height dimensions, will handle resizing, from http://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
   constructor(props) {
     super(props);
-    this.state = { width: '0', height: '0' };
+    this.state = { width: null, height: null };
     this.updateFishtankDimensions = this.updateFishtankDimensions.bind(this);
     //
   }
@@ -26,9 +26,13 @@ class App extends Component {
   render() {
     return (
       <div className="fishtank" ref="fishtank">
-        <Dopefish width={this.state.width} height={this.state.height} />
-        <Dopefish width={this.state.width} height={this.state.height} />
-        <Dopefish width={this.state.width} height={this.state.height} />
+{ this.state.width && this.state.height &&
+        <div className="fishes">
+          <Dopefish width={this.state.width} height={this.state.height} />
+          <Dopefish width={this.state.width} height={this.state.height} />
+          <Dopefish width={this.state.width} height={this.state.height} />
+        </div>
+}
       </div>
     );
   }

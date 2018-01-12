@@ -23,8 +23,7 @@ class Dopefish extends Component {
    }
 
   tankBoundariesCalc(val) {
-      let calcval = this.getRandomIntInclusive(0, val)
-      return calcval;
+      return this.getRandomIntInclusive(0, val)
   }
 
   getRandomIntInclusive(min, max) {
