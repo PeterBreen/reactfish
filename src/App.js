@@ -23,14 +23,21 @@ class App extends Component {
       this.setState({ width: this.refs.fishtank.clientWidth, height: this.refs.fishtank.clientHeight });
   }
 
+
   render() {
+
+    let fishQty = null;
+    if (this.state.width > 640) {
+        fishQty = <div><Dopefish width={this.state.width} height={this.state.height} /><Dopefish width={this.state.width} height={this.state.height} /><Dopefish width={this.state.width} height={this.state.height} /><Dopefish width={this.state.width} height={this.state.height} /> </div>
+      } else {
+        fishQty = <div><Dopefish width={this.state.width} height={this.state.height} /><Dopefish width={this.state.width} height={this.state.height} /><Dopefish width={this.state.width} height={this.state.height} /></div>
+      }
+
     return (
       <div className="fishtank" ref="fishtank">
 { this.state.width && this.state.height &&
         <div className="fishes">
-          <Dopefish width={this.state.width} height={this.state.height} />
-          <Dopefish width={this.state.width} height={this.state.height} />
-          <Dopefish width={this.state.width} height={this.state.height} />
+          {fishQty}
         </div>
 }
       </div>
