@@ -23,19 +23,27 @@ class App extends Component {
   }
 
   updateFishtankDimensions() {
-    this.setState({width: this.refs.fishtank.clientWidth, height: this.refs.fishtank.clientHeight, numFish: this.numberOfFishes(this.refs.fishtank.clientWidth)});
+    this.setState({
+      width: this.refs.fishtank.clientWidth,
+      height: this.refs.fishtank.clientHeight,
+      numFish: this.numberOfFishes(this.refs.fishtank.clientWidth)
+    });
   }
 
   numberOfFishes(displayWidth) {
     let numFishes = Math.ceil(displayWidth / 200);
-    return numFishes;
+    if (numFishes < 1) {
+      return 1;
+    } else {
+      return numFishes
+    };
   }
 
   render() {
     const fishQty = [];
 
     for (var i = 0; i < this.state.numFish; i++) {
-      fishQty.push(<Dopefish key={i} width={this.state.width} height={this.state.height} />);
+      fishQty.push(<Dopefish key={i} width={this.state.width} height={this.state.height}/>);
     };
 
     return (<div className="fishtank" ref="fishtank">
