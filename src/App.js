@@ -7,7 +7,7 @@ class App extends Component {
     this.state = {
       width: null,
       height: null,
-      numFish: 6 //this will be determined with a formula, most likely in the updateFishtankDimensions(), after proof of concept
+      numFish: null
     };
     this.updateFishtankDimensions = this.updateFishtankDimensions.bind(this);
   }
@@ -23,7 +23,12 @@ class App extends Component {
   }
 
   updateFishtankDimensions() {
-    this.setState({width: this.refs.fishtank.clientWidth, height: this.refs.fishtank.clientHeight});
+    this.setState({width: this.refs.fishtank.clientWidth, height: this.refs.fishtank.clientHeight, numFish: this.numberOfFishes(this.refs.fishtank.clientWidth)});
+  }
+
+  numberOfFishes(displayWidth) {
+    let numFishes = Math.ceil(displayWidth / 200);
+    return numFishes;
   }
 
   render() {
@@ -31,7 +36,7 @@ class App extends Component {
 
     for (var i = 0; i < this.state.numFish; i++) {
       fishQty.push(<Dopefish key={i} width={this.state.width} height={this.state.height} />);
-    }; //should return 6 fish while numFish is hardcoded
+    };
 
     return (<div className="fishtank" ref="fishtank">
       {
