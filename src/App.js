@@ -32,11 +32,7 @@ class App extends Component {
 
   numberOfFishes(displayWidth) {
     let numFishes = Math.ceil(displayWidth / 200);
-    if (numFishes < 1) {
-      return 1;
-    } else {
-      return numFishes
-    };
+    return numFishes;
   }
 
   render() {
